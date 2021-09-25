@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+*
+{
+ font-family: 'Bebas Neue', cursive;
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+body
+{
+ justify-content: center;
+ align-items: center;
+ min-height: 100vh;
+ display: flex;
+}
+label
+{
+ background: linear-gradient(45deg,#3bff00,#a4ff00);
+ width: 250px;
+ height: 50px;
+ justify-content: center;
+ align-items: center;
+ min-height: 50px;
+ display: flex;
+ font-size: 1.5em;
+ color: #000;
+ letter-spacing: 5px;
+ font-weight: bolder;
+ box-shadow: 10px 5px 30px rgba(43,168,7,0.5);
+ position: relative;
+ border-radius: 25px;
+}
+label::before
+{
+ position: absolute;
+ content: '';
+ height: 120%;
+ width: 105%;
+ background: #fff;
+ z-index: -1;
+ border-radius: 30px;
+ opacity: 0;
+ transition: 0.3s;
+}
+label::after
+{
+ position: absolute;
+ content: '';
+ height: 140%;
+ width: 110%;
+ background: linear-gradient(45deg,#3bff00,#a4ff00);
+ z-index: -2;
+ border-radius: 35px;
+ opacity: 0;
+ transition: 0.3s;
+}
+span::before
+{
+ height: 100px;
+ width: 100px;
+ position: absolute;
+ content: '';
+ background: transparent;
+ border: 10px solid #3bff00;
+ z-index: -3;
+ border-radius: 50%;
+ animation: kaif 2s linear infinite;
+ top: -65%;
+ pointer-events: none;
+ display: var(--o);
+}
+@keyframes kaif
+{
+ 0%
+ {
+  transform: scale(0);
+  opacity: 1;
+ }
+ 100%
+ {
+  transform: scale(2.5);
+  opacity: 0;
+ }
+}
+#dot:checked + label::before,
+#dot:checked + label::after
+{
+ opacity: 1;
+}
+#dot
+{
+ display: none;
+}
