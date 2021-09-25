@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <title>kaif ka radial dynamic button hai</title>
+</head>
+<link rel="stylesheet" type="text/css" href="kaif ka radial dynamic button hai.css">
+<body>
+ <input type="checkbox" id="dot">
+ <label for="dot" onclick="fun()">
+  <span>
+   SUBSCRIBE
+  </span>
+ </label>
+</body>
+<script>
+ var ring = document.documentElement;
+ ring.style.setProperty('--o', "");
+ var a = "a";
+ function fun() {
+  if (a == "a") {
+   ring.style.setProperty('--o', "none");
+   a = "b";
+  } else {
+   ring.style.setProperty('--o', "");
+   a = "a";
+  }
+ }
+</script>
+</html>
